@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="tr" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Codex Tool</title>
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <style>
+      html, body, #root {
+        background: transparent !important;
+        background-color: transparent !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        overflow: hidden !important;
+        scrollbar-width: none !important;
+        -ms-overflow-style: none !important;
+      }
+      html::-webkit-scrollbar, body::-webkit-scrollbar, #root::-webkit-scrollbar {
+        width: 0px !important;
+        height: 0px !important;
+        display: none !important;
+      }
+    </style>
+  </head>
+  <body class="bg-transparent text-slate-100 select-none overflow-hidden m-0 p-0 antialiased font-sans">
+    <div id="root" class="h-full w-full flex flex-col bg-transparent overflow-hidden"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

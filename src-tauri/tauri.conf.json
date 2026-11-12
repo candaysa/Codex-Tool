@@ -1,0 +1,54 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Codex Tool",
+  "version": "1.0.0",
+  "identifier": "com.candaysa.codextool",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "Codex Tool",
+        "width": 410,
+        "height": 650,
+        "minWidth": 360,
+        "minHeight": 520,
+        "resizable": true,
+        "decorations": false,
+        "transparent": true,
+        "center": true,
+        "shadow": true
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' asset: http://asset.localhost data:; connect-src ipc: http://ipc.localhost"
+    }
+  },
+  "bundle": {
+    "active": false,
+    "targets": "all",
+    "shortDescription": "Codex Tool - Desktop Multi-Account Quota & Auto-Resume",
+    "longDescription": "Ultra-lightweight desktop tool for OpenAI Codex with dual-tier quota management and seamless automatic thread resumption.",
+    "category": "Development",
+    "copyright": "Copyright © 2026 CanDaysa. Open source.",
+    "linux": {
+      "deb": {
+        "depends": ["libayatana-appindicator3-1", "libwebkit2gtk-4.1-0"]
+      }
+    },
+    "icon": [
+      "icons/32x32.png",
+      "icons/64x64.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico",
+      "icons/icon.png"
+    ]
+  }
+}

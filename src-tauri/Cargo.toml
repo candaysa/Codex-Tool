@@ -1,0 +1,38 @@
+[package]
+name = "codex-tool"
+version = "1.0.0"
+description = "Desktop multi-account, adaptive quota & auto-resume manager for OpenAI Codex"
+authors = ["CanDaysa"]
+edition = "2021"
+
+[build-dependencies]
+tauri-build = { version = "2.0", features = [] }
+
+[dependencies]
+tauri = { version = "2.0", features = ["tray-icon"] }
+tauri-plugin-shell = "2.0"
+tauri-plugin-single-instance = "2.0"
+tauri-plugin-notification = "2.0"
+tauri-plugin-autostart = "2.0"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tokio = { version = "1", features = ["full"] }
+rusqlite = { version = "0.32", features = ["bundled"] }
+sha2 = "0.10"
+base64 = "0.22"
+getrandom = "0.2"
+reqwest = { version = "0.12", default-features = false, features = ["rustls-tls", "json", "stream"] }
+axum = { version = "0.8", default-features = false, features = ["http1", "original-uri", "tokio", "ws"] }
+futures-util = "0.3"
+tokio-tungstenite = { version = "0.29", features = ["rustls-tls-webpki-roots"] }
+multer = "3"
+toml_edit = "0.25"
+tempfile = "3"
+chrono = { version = "0.4", default-features = false, features = ["clock", "std"] }
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
